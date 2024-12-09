@@ -14,7 +14,9 @@ public class produto implements ProdutosParaVenda {
         return 0;
     }
 
-    public int mostraProduto() {
-        return 0;
+    public String mostraProduto() {
+
+
+        return "";
     }
 }

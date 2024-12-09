@@ -16,6 +16,22 @@ public class maqVendas {
         produtosVendaveis.add("Água sem gás");
         produtosVendaveis.add("Snacks");
     }
+
+    public void adicionaProduto(produto){
+
+    }
+
+    public boolean vendeProduto(produto){
+
+    }
+
+    public void mostrarProdutosNaMaquina(){
+
+    }
+
+    public void mostrarProdutosEmFalta(){
+
+    }
 }
 
 
