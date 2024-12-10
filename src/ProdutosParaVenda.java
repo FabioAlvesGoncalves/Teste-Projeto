@@ -1,4 +1,4 @@
 public interface ProdutosParaVenda  {
-    public boolean VenderProduto();
-    public int ReporEstoque(int quantidade);
+     boolean venderProduto();
+     void reporEstoque(int quantidade);
 }

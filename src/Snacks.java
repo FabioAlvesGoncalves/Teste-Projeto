@@ -1,4 +1,4 @@
-public class Snacks extends produto {
+public class Snacks extends Produto {
     private int peso;
 
 }
