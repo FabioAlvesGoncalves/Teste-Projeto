@@ -1,37 +1,49 @@
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class maqVendas {
-    private ArrayList<String> produtos = new ArrayList<String>();
-    private ArrayList<String> produtosVendaveis = new ArrayList<String>();
+    private List<Produto> produtos = new ArrayList<>();
+    private List<String> produtosVendaveis = List.of("Agua com Gas", "Agua sem Gas", "Snacks");
 
-
-    public ArrayList<String> getProdutosVendaveis() {
-        System.out.println(produtosVendaveis);
-        return produtosVendaveis;
-
+    public void adicionarProduto(Produto produto){
+        produtos.add(produto);
     }
 
-    public void setProdutosVendaveis() {
-        produtosVendaveis.add("Água com gás");
-        produtosVendaveis.add("Água sem gás");
-        produtosVendaveis.add("Snacks");
+    public String mostrarProdutosNaMaquina() {
+        String resultado = "Produtos na Maquina: \n";
+        for(Produto produto : produtos) {
+            resultado += produto.mostrarProduto() + "\n";
+        }
+        return resultado;
+    }
+    public String mostrarProdutosEmFalta() {
+        String resultado = "Produtos em Falta: \n";
+        for (String produtoVendavel : produtosVendaveis) {
+            boolean encontrado = false;
+            for (Produto produto : produtos) {
+                if (produto.getNome().equalsIgnoreCase(produtoVendavel)) {
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (!encontrado) {
+                resultado += produtoVendavel + "\n";
+            }
+        }
+        return resultado;
     }
 
-    public void adicionaProduto(produto){
 
+
+public boolean vendeProduto(int id) { //ID utilizado para a venda do item
+    for(Produto produto : produtos){
+        if (produto.getId() == id && produto.venderProduto()) {
+            return true; //venda realizada com sucesso
+        }
     }
-
-    public boolean vendeProduto(produto){
-
-    }
-
-    public void mostrarProdutosNaMaquina(){
-
-    }
-
-    public void mostrarProdutosEmFalta(){
-
-    }
+    return false; //id nao encontrado ou sem stock
+}
 }
 
 
